@@ -88,11 +88,6 @@
   color: #636057;
 }
 
-.main-photo {
-  width: 351px;
-  height: 230px;
-}
-
 .icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -157,7 +152,7 @@
 
 .position-ab {
   position: absolute;
-  bottom: -21%;
+  top: 101%;
 }
 
 .before-after {
@@ -188,12 +183,8 @@
 }
 
 @media (min-width: 768px) {
-  .main-photo {
-    width: 724px;
-    height: 474px;
-  }
   .position-ab {
-    bottom: -18%;
+    top: 84%;
   }
   .w-100 {
     width: 100%;
