@@ -8035,6 +8035,11 @@ fieldset:disabled .btn {
   padding-left: 0.5rem !important;
 }
 
+.px-25 {
+  padding-right: 0.75rem !important;
+  padding-left: 0.75rem !important;
+}
+
 .px-3 {
   padding-right: 1rem !important;
   padding-left: 1rem !important;
@@ -8209,6 +8214,9 @@ fieldset:disabled .btn {
 }
 .fs-7 {
   font-size: 0.875rem !important;
+}
+.fs-8{
+  font-size: 0.75rem;
 }
 
 .fst-italic {
