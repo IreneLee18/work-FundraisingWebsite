@@ -195,7 +195,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- 主區 -->
     <main class="mb-5">
 
@@ -204,7 +204,7 @@
         <div class="container">
           <ul class="navbar-nav text-lightGray d-flex flex-row">
             <li class="nav-item item" :class="{tabActive:currentTab===tab}" v-for="tab in tabs" :key="tab">
-              <a class="d-block py-3 px-3 p-md-4" href="#" @click.preventDefault="currentTab = tab">{{tab}}</a>
+              <a class="d-block py-3 px-3 p-md-4" :href="`#${tab}`" @click.preventDefault="currentTab = tab">{{tab}}</a>
             </li>
           </ul>
         </div>
@@ -304,7 +304,7 @@
                 </div>
               </form>
             </div>
-
+            
             <!-- 側邊 -->
             <aside class="col-12 col-md-4">
               <div class="border-color-E5 border rounded-3 p-3 mb-8">
@@ -360,19 +360,16 @@
             </aside>
           </div>
         </div>
-
       </div>
-    </main>
-    
+    </main>   
     <div class="fixed-bottom d-md-none">
       <a href="#sponsor-form" class="btn btn-primary w-100 darkGray fw-bold rounded-0">贊助專案</a>
     </div>
-
     <footer class="ft-body text-center py-4 py-md-6 ">
       <p class="text-white mb-8 mb-md-0 fw-lighter">Copyright ©2022 拼拼 All rights reserved.</p>
     </footer>
   </div>
-
+  
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.33/vue.global.js'></script>
   <script src="index.js"></script>
 </body>
