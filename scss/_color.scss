@@ -1,0 +1,63 @@
+.lightGray {
+  color: #53524f;
+}
+
+.darkGray {
+  color: #636057;
+}
+
+.inputColor {
+  color: #999999;
+}
+
+.bg-primary-hover {
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #F48263;
+    border-color: #F48263;
+    color: #fff;
+    box-shadow: none;
+  }
+}
+
+.bg-secondary-hover {
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #FFDF65;
+    border-color: #FFDF65;
+    color: #858377;
+    box-shadow: none;
+  }
+}
+
+.bg-secondary-hover:hover>i {
+  color: #F48263;
+}
+
+.ft-body{
+  background-color: #494846;
+}
+
+.color-more {
+  color: #ff785e;
+
+  &:hover {
+    color: rgba(255, 120, 94, .7);
+  }
+}
+
+.border-color-E5 {
+  border-color: #E5E5E5;
+}
+
+.btn-focus {
+  &:focus {
+    border-color: #E5E5E5;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+}

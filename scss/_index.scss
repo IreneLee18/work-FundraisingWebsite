@@ -1,0 +1,193 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.font-baloo {
+  font-family: 'Baloo 2', cursive;
+}
+
+.container {
+  max-width: 1115px;
+}
+
+.logo {
+  width: 111px;
+  height: 40px;
+}
+
+.show {
+  opacity: 1;
+  display: block;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.modal-content {
+  max-width: 500px;
+  height: 444px;
+}
+
+.email-question {
+  position: relative;
+  width: 172px;
+
+  &::before {
+    content: '';
+    height: 1px;
+    width: 132px;
+    background-color: #E8E8DB;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 110%;
+  }
+
+  &::after {
+    content: '';
+    height: 1px;
+    width: 132px;
+    background-color: #E8E8DB;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 110%;
+  }
+}
+
+.store {
+  width: 78px;
+  height: 78px;
+}
+
+.left {
+  width: 189px;
+}
+
+.right {
+  width: 262px;
+  background: #EEEEEE;
+}
+
+
+.tabActive,
+.item:hover {
+  border-bottom: 2px solid #FFDF65;
+  color: #636057;
+  font-weight: bold;
+}
+
+.item a {
+  color: #636057;
+}
+
+.icon {
+  display: flex;
+
+  i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #858377;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+
+  }
+
+  .fab {
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+.letter-space {
+  letter-spacing: 2px;
+}
+
+.introduce-group {
+  .card {
+    border-radius: 13px !important;
+  }
+
+  .sponsor,
+  .limited {
+    border-radius: 4px;
+    height: 22px;
+  }
+
+  .sponsor {
+    width: 107px;
+    background: #E8E8DB;
+    color: #858377;
+  }
+
+  .limited {
+    width: 90px;
+    background: #858377;
+    color: #fff;
+  }
+}
+
+.before-after {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    border: 1.5px solid #FFDF65;
+    position: absolute;
+    top: 50%;
+    width: 117px;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+// 點擊才套用
+.accordion-item-active {
+  box-shadow: 0 0 8px 0 rgba(73, 72, 70, 0.15);
+}
+
+// 加上去旋轉icon
+.accordionActive.accordion-button {
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+
+
+
+@media (min-width: 1200px) {
+  .w-24 {
+    width: 24% !important;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .store {
+    width: 108px;
+    height: 108px;
+  }
+
+  .before-after {
+
+    &::before,
+    &::after {
+      width: 293px;
+    }
+  }
+}
