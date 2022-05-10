@@ -148,7 +148,7 @@ const app = Vue.createApp({
 // 元件：專案介紹
 app.component("introduce", {
   template: `
-  <ul class="list-unstyled text-dark">
+  <ul class="list-unstyled text-dark" id="專案介紹">
     <li>
     <div class="w-100">
     <img class="mb-2 img-fluid" src="https://hexschool.github.io/boootstrap5WebLayout/assets/p1.jpg"
@@ -184,7 +184,7 @@ app.component("question", {
     },
   },
   template: `
-  <div class="accordion">
+  <div class="accordion" id="常見問答">
     <div class="accordion-item border rounded-3 mb-4 accordion-item-active"
       v-for="item in questionProps" :key="item.id">
       <h2 class="accordion-header">
@@ -214,7 +214,7 @@ app.component("question", {
 app.component("current-progress", {
   props: ["currentProgress"],
   template: `
-  <div class="card mb-3"
+  <div class="card mb-3" id="目前進度"
     v-for="item in currentProgress" :key="item.id"
   >
     <div class="row g-0">
@@ -237,7 +237,7 @@ app.component("current-progress", {
 app.component("message", {
   props:['message'],
   template:`
-  <div class="message">
+  <div class="message" id="留言">
     <div class="border-color-E5 border rounded-3 px-3 pt-3 p-md-3 mb-4" v-for="item in message">
       <div class="d-flex align-items-center">
         <div class="photo">
@@ -249,9 +249,9 @@ app.component("message", {
         </h5>
       </div>
       <p class="text text-dark my-2 mt-md-0">{{ item.userText }}</p>
-      <div class="bg-light p-md-4" :class="{'d-none':item.replyText==''}">
+      <div class="bg-light mb-4 p-4" :class="{'d-none':item.replyText==''}">
         <h4 class="color-more fs-7 fw-normal">提案者回覆</h4>
-        <p class="text-dark fs-6 mb-md-0">{{ item.replyText }}</p>
+        <p class="text-dark fs-6 mb-0">{{ item.replyText }}</p>
       </div>
     </div>
   </div>
