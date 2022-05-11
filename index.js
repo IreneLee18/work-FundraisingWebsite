@@ -3,6 +3,12 @@ const app = Vue.createApp({
     return {
       hideNavbar: true,
       showLogin: false,
+      propertyHover: [
+        { good1: true },
+        { good2: true },
+        { good3: true },
+        { good4: true },
+      ],
       tabs: ["專案介紹", "常見問答", "目前進度", "留言"],
       currentTab: "專案介紹",
       question: [
@@ -103,35 +109,35 @@ const app = Vue.createApp({
           replyText: "",
         },
       ],
-      aside:[
+      aside: [
         {
-          id:'plan1',
-          img:'https://hexschool.github.io/boootstrap5WebLayout/assets/plan_img.jpg',
-          title:'買一送一，只有兩百組別錯過',
-          price:'NT$ 1600',
-          sponsorNum:'88',
-          limitedNum:'200',
-          text:'受就相法大夠局來畫師我只這然以放灣得的後人心年我物我年，或人有動與次出女親構算帶年行著所間女。',
+          id: "plan1",
+          img: "https://hexschool.github.io/boootstrap5WebLayout/assets/plan_img.jpg",
+          title: "買一送一，只有兩百組別錯過",
+          price: "NT$ 1600",
+          sponsorNum: "88",
+          limitedNum: "200",
+          text: "受就相法大夠局來畫師我只這然以放灣得的後人心年我物我年，或人有動與次出女親構算帶年行著所間女。",
         },
         {
-          id:'plan2',
-          img:'https://hexschool.github.io/boootstrap5WebLayout/assets/plan_img.jpg',
-          title:'買一送一，只有兩百組別錯過',
-          price:'NT$ 1600',
-          sponsorNum:'88',
-          limitedNum:'200',
-          text:'受就相法大夠局來畫師我只這然以放灣得的後人心年我物我年，或人有動與次出女親構算帶年行著所間女。',
+          id: "plan2",
+          img: "https://hexschool.github.io/boootstrap5WebLayout/assets/plan_img.jpg",
+          title: "買一送一，只有兩百組別錯過",
+          price: "NT$ 1600",
+          sponsorNum: "88",
+          limitedNum: "200",
+          text: "受就相法大夠局來畫師我只這然以放灣得的後人心年我物我年，或人有動與次出女親構算帶年行著所間女。",
         },
         {
-          id:'plan3',
-          img:'https://hexschool.github.io/boootstrap5WebLayout/assets/plan_img.jpg',
-          title:'買一送一，只有兩百組別錯過',
-          price:'NT$ 1600',
-          sponsorNum:'88',
-          limitedNum:'200',
-          text:'受就相法大夠局來畫師我只這然以放灣得的後人心年我物我年，或人有動與次出女親構算帶年行著所間女。',
+          id: "plan3",
+          img: "https://hexschool.github.io/boootstrap5WebLayout/assets/plan_img.jpg",
+          title: "買一送一，只有兩百組別錯過",
+          price: "NT$ 1600",
+          sponsorNum: "88",
+          limitedNum: "200",
+          text: "受就相法大夠局來畫師我只這然以放灣得的後人心年我物我年，或人有動與次出女親構算帶年行著所間女。",
         },
-      ]
+      ],
     };
   },
   methods: {
@@ -226,7 +232,7 @@ app.component("current-progress", {
           <h5 class="card-title mb-0 mb-md-0 fs-6">{{ item.title }}</h5>
           <small class="text-muted font-baloo text-gray ">2021-6-20</small>
           <p class="card-text text-gray fs-7 mt-2 d-none d-md-block">{{ item.text }}</p>
-          <a href="#" class="color-more font-baloo fw-bold d-block">More</a>
+          <a href="#" class="color-ff785e font-baloo fw-bold d-block">More</a>
         </div>
       </div>
     </div>
@@ -235,8 +241,8 @@ app.component("current-progress", {
 
 // 元件：留言
 app.component("message", {
-  props:['message'],
-  template:`
+  props: ["message"],
+  template: `
   <div class="message" id="留言">
     <div class="border-color-E5 border rounded-3 px-3 pt-3 p-md-3 mb-4" v-for="item in message">
       <div class="d-flex align-items-center">
@@ -250,12 +256,12 @@ app.component("message", {
       </div>
       <p class="text text-dark my-2 mt-md-0">{{ item.userText }}</p>
       <div class="bg-light mb-4 p-4" :class="{'d-none':item.replyText==''}">
-        <h4 class="color-more fs-7 fw-normal">提案者回覆</h4>
+        <h4 class="color-ff785e fs-7 fw-normal">提案者回覆</h4>
         <p class="text-dark fs-6 mb-0">{{ item.replyText }}</p>
       </div>
     </div>
   </div>
-  `
+  `,
 });
 
 app.mount("#app");
