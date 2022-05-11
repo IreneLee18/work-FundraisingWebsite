@@ -12,14 +12,9 @@ body {
   font-family: 'Baloo Tamma 2', cursive;
 }
 
-.container {
-  max-width: 1115px;
-}
-
-.logo {
-  width: 111px;
-  height: 40px;
-}
+// .container {
+//   max-width: 1115px;
+// }
 
 .show {
   opacity: 1;
@@ -30,6 +25,76 @@ body {
 .modal-content {
   max-width: 500px;
   height: 444px;
+}
+
+.property-item {
+  position: relative;
+
+}
+
+.property {
+  &::before {
+    content: attr(data-content);
+    position: absolute;
+    bottom: 120%;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    background: #494846;
+    opacity: .7;
+    padding: .25rem .5rem;
+    border-radius: 4px;
+    letter-spacing: 2px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    opacity: .7;
+    border-top: 8px solid #494846;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    top: -20%;
+  }
+}
+
+.property1 {
+  &::before {
+    left: -85%;
+  }
+
+  &::after {
+    left: 15%;
+  }
+}
+
+.property2 {
+  &::before {
+    left: -20%;
+  }
+
+  &::after {
+    left: 40%;
+  }
+}
+
+.property3 {
+  &::before {
+    left: -25%;
+  }
+
+  &::after {
+    left: 40%;
+  }
+}
+
+.property4 {
+  &::before {
+    left: -10%;
+  }
+
+  &::after {
+    left: 40%;
+  }
 }
 
 .email-question {
@@ -86,7 +151,6 @@ body {
 }
 
 .icon {
-  display: flex;
 
   i {
     width: 30px;
@@ -111,30 +175,23 @@ body {
 }
 
 .introduce-group {
-  .card {
-    border-radius: 13px !important;
-  }
-
-  .sponsor,
-  .limited {
-    border-radius: 4px;
-    height: 22px;
-  }
 
   .sponsor {
+    height: 22px;
     width: 107px;
     background: #E8E8DB;
     color: #858377;
   }
 
   .limited {
+    height: 22px;
     width: 90px;
     background: #858377;
     color: #fff;
   }
 }
 
-.before-after {
+.sponsor-project {
   position: relative;
 
   &::before,
@@ -183,7 +240,7 @@ body {
     height: 108px;
   }
 
-  .before-after {
+  .sponsor-project {
 
     &::before,
     &::after {
