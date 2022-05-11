@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="拼拼">
+  <meta name="author" content="Irene">
+  <meta property="og:title" content="拼拼" />
+  <meta property="og:description" content="拼拼" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>募資網站</title>
   <link rel="stylesheet" href="scss/all.css">
@@ -24,7 +28,8 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
-              <img src="https://hexschool.github.io/boootstrap5WebLayout/assets/logo.jpg" alt="logo" class="logo">
+              <img src="https://hexschool.github.io/boootstrap5WebLayout/assets/logo.jpg" alt="logo" width="111"
+                height="40">
             </a>
             <button type="button" class="navbar-toggler border-0 shadow-none" type="button"
               @click="hideNavbar=!hideNavbar">
@@ -45,7 +50,7 @@
                 </li>
               </ul>
               <form class="d-flex">
-                <button type="button" class="btn btn-primary bg-primary-hover darkGray px-8 rounded-pill me-2"
+                <button type="button" class="btn btn-primary bg-primary-hover text-secondary px-8 rounded-pill me-2"
                   @click.preventDefault="showLogin=!showLogin">登入</button>
                 <button type="button"
                   class="btn btn-outline-secondary bg-secondary-hover px-8 rounded-pill ms-1">註冊</button>
@@ -73,14 +78,12 @@
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">密碼</label>
                     <input type="password" class="form-control" id="exampleInputPassword1">
-                    <div id="emailHelp" class="form-text">
-                      <a href="#" class="form-text fs-6">忘記密碼？</a>
-                    </div>
+                    <a href="#" class="form-text fs-6">忘記密碼？</a>
                   </div>
                 </div>
               </div>
               <button type="button"
-                class="btn btn-primary bg-primary-hover darkGray mx-3 px-4 rounded-pill fw-bold fs-5 mb-4"
+                class="btn btn-primary bg-primary-hover text-secondary mx-3 px-4 rounded-pill fw-bold fs-5 mb-4"
                 @click.preventDefault="showLogin=false">登入</button>
               <div class="modal-footer justify-content-center border-0">
                 <a href="#" class="text-secondary email-question mb-3 fs-7" @click.preventDefault="showLogin=false">
@@ -94,12 +97,12 @@
     </div>
 
     <!-- banner -->
-    <div class="banner bg-light pb-4 py-md-3 pb-md-5 mb-md-0 border-bottom">
+    <div class="bg-light pb-4 pt-md-3 pb-md-5 mb-md-0 border-bottom">
       <div class="container">
         <div class="title mb-4 mb-md-6">
           <span class="badge bg-gray px-3 py-1 mb-2 mt-4 mt-md-10">魔法科技</span>
-          <h2 class="lightGray fw-bold"><span class="border-end border-2 border-dark pe-3 me-3">拍出會動的照片</span>
-            <span class="d-block d-lg-inline mt-2  mt-md-2 d-md-block">LivePhotos 魔法拍立得</span>
+          <h2 class="text-gray-dark fw-bold"><span class="border-end border-2 border-dark pe-3 me-3">拍出會動的照片</span>
+            <span class="d-block d-lg-inline mt-2  mt-md-2">LivePhotos 魔法拍立得</span>
           </h2>
         </div>
         <div class="row mb-4 mb-md-8">
@@ -109,60 +112,76 @@
           </div>
           <div class="col-md-11 col-lg-5">
             <div class="mt-3 mt-md-0">
-              <span class="darkGray fs-7">目標<span class="font-baloo"> $600,000</span></span>
+              <span class="text-secondary fs-7">目標<span class="font-baloo"> $600,000</span></span>
               <br>
               <span class="font-baloo fs-1 fw-bold">$280,047</span>
             </div>
             <div>
-              <div class="percent d-flex rounded-pill  overflow-hidden mb-3">
-                <span class="percent-start font-baloo text-center bg-primary">41%</span>
-                <span class="percent-end"></span>
+              <div class="progress rounded-pill mb-4" style="height: 16px;">
+                <div class="progress-bar bg-primary text-gray font-baloo text-center" role="progressbar"
+                  style="width: 41%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">41%</div>
               </div>
             </div>
-            <div class="number row">
-              <div class="people col-6">
-                <span class="tdarkGray fs-7 fw-lighter">贊助人數</span>
+            <div class="row">
+              <div class="col-6">
+                <span class="text-secondary fs-7 fw-lighter">贊助人數</span>
                 <br>
                 <span class="fs-2 fw-bold"><span class="font-baloo fs-1">1374</span>人</span>
               </div>
               <div class="day col-6">
-                <span class="tdarkGray fs-7 fw-lighter">募資倒數</span>
+                <span class="ttext-secondary fs-7 fw-lighter">募資倒數</span>
                 <br>
                 <span class="fs-2 fw-bold"><span class="font-baloo fs-1">27</span>天</span>
               </div>
             </div>
             <ul class="d-flex list-unstyled">
-              <li>
+              <li class="property-item">
+                <span class="property property1 text-primary d-none" data-content="認證標章"
+                  :class="{'d-md-inline':propertyHover.good1}"></span>
                 <a href="#" class="me-2 pe-1">
                   <img src="https://hexschool.github.io/boootstrap5WebLayout/assets/icon_good01.svg"
-                    alt="icon_good01.svg">
-                  <span class="d-md-inline d-lg-none text-lightGray align-middle ps-1 fs-8">認證標章</span>
+                    alt="icon_good01.svg" 
+                    @mouseover="propertyHover.good1=true" @mouseleave="propertyHover.good1=false"
+                  >
+                  <span class="d-inline d-md-none text-gray-dark align-middle ps-1 fs-8">認證標章</span>
                 </a>
               </li>
-              <li>
-                <a href="#" class="me-2 mx-1">
+              <li class="property-item">
+                <span class="property property2 text-primary d-none" data-content="品質保證"
+                  :class="{'d-md-inline':propertyHover.good2}"></span>
+                <a href="#" class="me-2 mx-1 mx-md-4">
                   <img src="https://hexschool.github.io/boootstrap5WebLayout/assets/icon_good02.svg"
-                    alt="icon_good02.svg">
-                  <span class="d-md-inline d-lg-none text-lightGray align-middle ps-1 fs-8">品質保證</span>
+                    alt="icon_good02.svg" 
+                    @mouseover="propertyHover.good2=true" @mouseleave="propertyHover.good2=false"
+                  >
+                  <span class="d-inline d-md-none text-gray-dark align-middle ps-1 fs-8">品質保證</span>
                 </a>
               </li>
-              <li>
-                <a href="#" class="me-2 mx-1">
+              <li class="property-item">
+                <span class="property property3 text-primary d-none" data-content="原生創意"
+                  :class="{'d-md-inline':propertyHover.good3}"></span>
+                <a href="#" class="me-2 mx-1 mx-md-4">
                   <img src="https://hexschool.github.io/boootstrap5WebLayout/assets/icon_good03.svg"
-                    alt="icon_good03.svg">
-                  <span class="d-md-inline d-lg-none text-lightGray align-middle ps-1 fs-8">原生創意</span>
+                    alt="icon_good03.svg" 
+                    @mouseover="propertyHover.good3=true" @mouseleave="propertyHover.good3=false"
+                  >
+                  <span class="d-inline d-md-none text-gray-dark align-middle ps-1 fs-8">原生創意</span>
                 </a>
               </li>
-              <li>
-                <a href="#" class="me-2 mx-1">
+              <li class="property-item">
+                <span class="property property4 text-primary d-none" data-content="人氣王"
+                  :class="{'d-md-inline':propertyHover.good4}"></span>
+                <a href="#" class="me-2 mx-1 mx-md-4">
                   <img src="https://hexschool.github.io/boootstrap5WebLayout/assets/icon_good04.svg"
-                    alt="icon_good04.svg">
-                  <span class="d-md-inline d-lg-none text-lightGray align-middle ps-1 fs-8">人氣王</span>
+                    alt="icon_good04.svg" 
+                    @mouseover="propertyHover.good4=true" @mouseleave="propertyHover.good4=false"
+                  >
+                  <span class="d-inline d-md-none text-gray-dark align-middle ps-1 fs-8">人氣王</span>
                 </a>
               </li>
             </ul>
             <div class="bg-white border-start border-primary border-3 rounded-3 mb-md-6">
-              <p class="p-3 text-lightGray">
+              <p class="p-3 text-gray-dark">
                 專案募資中！
                 <br>
                 在 <span class="fw-bold">2021/06/14 23:59</span> 募資結束前，您都可以贊助我們！
@@ -171,7 +190,7 @@
             <div class="row">
               <div class="col-12">
                 <button type="button"
-                  class="btn btn-primary bg-primary-hover darkGray w-100 px-4 py-md-2 rounded-pill fw-bold mb-2 ">贊助專案</button>
+                  class="btn btn-primary bg-primary-hover text-secondary w-100 px-4 py-md-2 rounded-pill fw-bold mb-2 ">贊助專案</button>
               </div>
               <!-- Gutters 是介於欄位之間的間隙，經水平方向的 padding 產生。 在每一欄設置 padding-y，並使用負值的 margin 來抵銷每行的開頭與結尾以對齊網格內容。 -->
             </div>
@@ -202,9 +221,9 @@
       <!-- 專案介紹的導覽列 -->
       <nav class="border-bottom mb-8 mb-md-5">
         <div class="container">
-          <ul class="navbar-nav text-lightGray d-flex flex-row">
+          <ul class="navbar-nav text-gray-dark d-flex flex-row">
             <li class="nav-item item" :class="{tabActive:currentTab===tab}" v-for="tab in tabs" :key="tab">
-              <a class="d-block py-3 px-3 p-md-4" :href="`#${tab}`" @click.preventDefault="currentTab = tab">{{tab}}</a>
+              <a class="d-block p-3 p-md-4" :href="`#${tab}`" @click.preventDefault="currentTab = tab">{{tab}}</a>
             </li>
           </ul>
         </div>
@@ -248,11 +267,11 @@
                 <div class="text-center">
                   <img class="mb-3" src="https://hexschool.github.io/boootstrap5WebLayout/assets/icon_heart.svg"
                     alt="heart">
-                  <h4 class="before-after">贊助專案</h4>
+                  <h4 class="sponsor-project">贊助專案</h4>
                 </div>
                 <div class="mb-3">
                   <label for="select-introduce" class="form-label">贊助方案</label>
-                  <select class="form-select inputColor" id="select-introduce" required>
+                  <select class="form-select color-99" id="select-introduce" required>
                     <option selected disabled value="">請選擇一個方案</option>
                     <option value="">...</option>
                     <option value="">...</option>
@@ -265,28 +284,28 @@
                 </div>
                 <div class="mb-3">
                   <label for="input-name" class="form-label">收件人姓名</label>
-                  <input type="text" class="form-control inputColor" id="input-name" required>
+                  <input type="text" class="form-control color-99" id="input-name" required>
                   <div class="invalid-feedback">
                     請輸入收件人姓名
                   </div>
                 </div>
                 <div class="mb-3">
                   <label for="phoneNumber" class="form-label">聯絡電話</label>
-                  <input type="text" class="form-control inputColor" id="phoneNumber" required>
+                  <input type="text" class="form-control color-99" id="phoneNumber" required>
                   <div class="invalid-feedback">
                     請輸入聯絡電話
                   </div>
                 </div>
                 <div class="mb-3">
-                  <label for="phoneNumber" class="form-label">聯絡信箱</label>
-                  <input type="email" class="form-control inputColor" id="phoneNumber" required>
+                  <label for="email" class="form-label">聯絡信箱</label>
+                  <input type="email" class="form-control color-99" id="email" required>
                   <div class="invalid-feedback">
                     請輸入正確的郵件格式
                   </div>
                 </div>
                 <div class="mb-3">
                   <label for="select-introduce" class="form-label">付款付方式</label>
-                  <select class="form-select inputColor" id="validationCustom04" required>
+                  <select class="form-select color-99" id="validationCustom04" required>
                     <option value="" selected disabled>請選擇付款方式</option>
                     <option value="">信用卡付款</option>
                     <option value="">超商付款</option>
@@ -299,7 +318,7 @@
                 </div>
                 <div class="mb-3 text-center">
                   <button
-                    class="btn btn-primary bg-primary-hover darkGray w-100 w-24 px-md-5 py-md-2 rounded-pill fw-bold fs-5 mb-2 "
+                    class="btn btn-primary bg-primary-hover text-secondary w-100 w-24 px-md-5 py-md-2 rounded-pill fw-bold fs-5 mb-2 "
                     type="submit">贊助專案</button>
                 </div>
               </form>
@@ -316,16 +335,20 @@
                     <img class="store border border-4 mb-4 border-primary rounded-circle"
                       src="https://hexschool.github.io/boootstrap5WebLayout/assets/store_img.jpg" alt="store">
                   </div>
-                  <h5 class="lh-base ps-4 text-body">缺錢事務所
+                  <h5 class="lh-base ps-4">缺錢事務所
                     <br>
-                    <span class="fs-6 fw-normal  text-body">已發起<span class="fw-bold"> 1 </span>個專案</span>
+                    <span class="fs-6 fw-normal">已發起<span class="fw-bold"> 1 </span>個專案</span>
                   </h5>
                 </div>
                 <p class="text my-4 text-dark d-none d-md-block">需要點錢錢做些酷酷的東西，拜託各位乾爹乾媽囉！</p>
                 <div class="contact d-flex justify-content-between">
-                  <div class="icon">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-youtube"></i>
+                  <div class="icon d-flex">
+                    <a href="#">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                      <i class="fab fa-youtube"></i>
+                    </a>
                   </div>
                   <button type="button" class="btn btn-outline-secondary px-4 rounded-pill ms-1 fs-8">
                     <i class="fas fa-comment-dots me-2"></i>
@@ -338,12 +361,10 @@
                   <h5 class="text-dark text-center lh-lg">選擇一個方案來支持</h5>
                 </div>
                 <ul class="list-unstyled ">
-                  <li class="card my-3"
-                  v-for="item in aside">
-                    <img class="card-img" :src="item.img"
-                      alt="{{item.id}}">
+                  <li class="card rounded-3 my-3" v-for="item in aside">
+                    <img class="card-img" :src="item.img" alt="{{item.id}}">
                     <div class="card-body py-2">
-                      <div class="border-bottom darkGray d-flex justify-content-between pb-2 mb-2 fs-7">
+                      <div class="border-bottom text-secondary d-flex justify-content-between pb-2 mb-2 fs-7">
                         <span>限時優惠</span>
                         <span class="font-baloo">2 days 20:05:20</span>
                       </div>
@@ -351,11 +372,13 @@
                         {{item.title}}
                         <span class="fs-3 font-baloo fw-bold d-block mt-2">{{ item.price }}</span>
                       </h5>
-                      <span class="sponsor fs-8 fw-bold py-1 me-2 px-4">已被贊助 {{ item.sponsorNum }} 次</span>
-                      <span class="limited fs-8 fw-bold py-1 px-4">限量<span class="text-primary"> {{ item.limitedNum }} </span>個</span>
+                      <span class="sponsor rounded-2 fs-8 fw-bold py-1 me-2 px-4">已被贊助 {{ item.sponsorNum }} 次</span>
+                      <span class="limited rounded-2 fs-8 fw-bold py-1 px-4">限量<span class="text-primary"> {{
+                          item.limitedNum }}
+                        </span>個</span>
                       <p class="card-text text-gray mt-2">{{ item.text }}</p>
                       <button type="button"
-                        class="btn btn-primary bg-primary-hover darkGray w-100 px-4 py-2 rounded-pill fw-bold fs-6 mb-2 ">贊助此專案</button>
+                        class="btn btn-primary bg-primary-hover text-secondary w-100 px-4 py-2 rounded-pill fw-bold fs-6 mb-2 ">贊助此專案</button>
                     </div>
                   </li>
                 </ul>
@@ -363,10 +386,11 @@
             </aside>
           </div>
         </div>
+
       </div>
-    </main>  
+    </main>
     <div class="fixed-bottom d-md-none">
-      <a href="#sponsor-form" class="btn btn-primary w-100 darkGray fw-bold rounded-0">贊助專案</a>
+      <a href="#sponsor-form" class="btn btn-primary w-100 text-secondary fw-bold rounded-0">贊助專案</a>
     </div>
     <footer class="ft-body text-center py-4 py-md-6 ">
       <p class="text-white mb-8 mb-md-0 fw-lighter">Copyright ©2022 拼拼 All rights reserved.</p>
