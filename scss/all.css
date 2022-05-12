@@ -122,7 +122,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 p {
@@ -9037,14 +9037,18 @@ fieldset:disabled .btn {
 }
 
 .fs-6 {
-  font-size: 1rem !important;
+  font-size: 1.125rem !important;
 }
 
 .fs-7 {
-  font-size: 0.875rem !important;
+  font-size: 1rem !important;
 }
 
 .fs-8 {
+  font-size: 0.875rem !important;
+}
+
+.fs-9 {
   font-size: 0.75rem !important;
 }
 
@@ -13511,13 +13515,6 @@ fieldset:disabled .btn {
   }
 }
 
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 body {
   font-family: 'Noto Sans', sans-serif;
 }
@@ -13735,14 +13732,14 @@ body {
   }
 }
 
-.color-99 {
+.input-color {
   color: #999999;
 }
 
 .bg-primary-hover:hover, .bg-primary-hover:focus, .bg-primary-hover:active {
   background-color: #F48263;
   border-color: #F48263;
-  color: #fff;
+  color: #fff !important;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
