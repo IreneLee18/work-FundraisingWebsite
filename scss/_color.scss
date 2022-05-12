@@ -1,4 +1,4 @@
-.color-99 {
+.input-color {
   color: #999999;
 }
 
@@ -9,7 +9,7 @@
   &:active {
     background-color: #F48263;
     border-color: #F48263;
-    color: #fff;
+    color: #fff !important;
     box-shadow: none;
   }
 }
